@@ -2,6 +2,7 @@
 using Core.Models;
 using Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,12 @@ namespace Business.Services
     public class UserService : IUserService
     {
         private readonly AppDbContext _db;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(AppDbContext db)
+        public UserService(AppDbContext db, ILogger<UserService> logger)
         {
             _db = db;
+            _logger = logger;
         }
         public async Task<PetitionResponse> CreateUser(User user)
         {
@@ -29,6 +32,7 @@ namespace Business.Services
                     _db.Users.Add(user);
                     if (await _db.SaveChangesAsync() <= 0)
                     {
+                        _logger.LogError("Error al crear usuario");
                         return new PetitionResponse
                         {
                             success = false,
@@ -38,6 +42,7 @@ namespace Business.Services
                     }
                     else
                     {
+                        _logger.LogInformation("Usuario creado exitosamente");
                         return new PetitionResponse
                         {
                             success = true,
@@ -48,6 +53,7 @@ namespace Business.Services
                 }
                 else
                 {
+                    _logger.LogWarning("Está intentando crear un usuario que ya existe");
                     return new PetitionResponse
                     {
                         success = false,
@@ -57,6 +63,7 @@ namespace Business.Services
                 }
             }
             catch (Exception ex) {
+                _logger.LogError($"Error al crear usuario: {ex.Message}");
                 return new PetitionResponse
                 {
                     success = false,
@@ -73,6 +80,7 @@ namespace Business.Services
                 User user = await _db.Users.FirstOrDefaultAsync(x => x.Id == id);
                 if (user != null)
                 {
+                    _logger.LogError("Error al buscar usuario");
                     return new PetitionResponse
                     {
                         success = true,
@@ -82,6 +90,7 @@ namespace Business.Services
                 }
                 else
                 {
+                    _logger.LogInformation("Usuario encontrado exitosamente");
                     return new PetitionResponse
                     {
                         success = false,
@@ -92,6 +101,7 @@ namespace Business.Services
             }
             catch (Exception ex) 
             {
+                _logger.LogError($"Error al buscar usuario: {ex.Message}");
                 return new PetitionResponse
                 {
                     success = false,
@@ -108,6 +118,7 @@ namespace Business.Services
                 List<User> users = await _db.Users.ToListAsync();
                 if (users.Count > 0)
                 {
+                    _logger.LogError("Error al buscar usuarios");
                     return new PetitionResponse
                     {
                         success = true,
@@ -117,6 +128,7 @@ namespace Business.Services
                 }
                 else
                 {
+                    _logger.LogInformation("Usuarios encontrados exitosamente");
                     return new PetitionResponse
                     {
                         success = false,
@@ -127,6 +139,7 @@ namespace Business.Services
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Error al buscar usuarios: {ex.Message}");
                 return new PetitionResponse
                 {
                     success = false,
@@ -147,6 +160,7 @@ namespace Business.Services
                     _db.Entry(oldUser).CurrentValues.SetValues(user);
                     if (await _db.SaveChangesAsync() <= 0)
                     {
+                        _logger.LogError("Error al actualizar usuario");
                         return new PetitionResponse
                         {
                             success = false,
@@ -156,6 +170,7 @@ namespace Business.Services
                     }
                     else
                     {
+                        _logger.LogInformation("Se actualizó el usuario exitosamente");
                         return new PetitionResponse
                         {
                             success = true,
@@ -166,6 +181,7 @@ namespace Business.Services
                 }
                 else
                 {
+                    _logger.LogWarning("El usuario que intenta actualizar ya está creado");
                     return new PetitionResponse
                     {
                         success = false,
@@ -176,6 +192,7 @@ namespace Business.Services
             }
             catch (Exception ex) 
             {
+                _logger.LogError($"Error al actualizar usuario: {ex.Message}");
                 return new PetitionResponse
                 {
                     success = false,

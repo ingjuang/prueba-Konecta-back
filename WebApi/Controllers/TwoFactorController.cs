@@ -1,5 +1,7 @@
 ﻿using Business.Interfaces;
+using Core.Models;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using TwoFactorAuthNet;
 using TwoFactorAuthNet.Providers.Qr;
 using Utils.Responses;
@@ -31,6 +33,7 @@ namespace WebApi.Controllers
                 result = imgQR,
                 success = true
             };
+            Log.Information($"GetQRCode => se ha generado un nuevo código QR");
             return Ok(res);
         }
 
@@ -39,12 +42,14 @@ namespace WebApi.Controllers
         {
             string secret = await _twoFactorService.GetSecret(userName);
             var tfa = new TwoFactorAuth("prueba_konecta", 6, 30, Algorithm.SHA256);
+            Log.Information($"Se valida el código generado por la aplicación");
             return tfa.VerifyCode(secret, code);
         }
 
         [HttpGet, Route("HaveTFA")]
         public async Task<bool> HaveTFA(string userName)
         {
+            Log.Information($"Se verifica si el usuario ya tiene el TFA activado");
             return await _twoFactorService.HaveTFA(userName);
         }
     }

@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
+using Serilog;
 
 namespace WebApi.Controllers
 {
@@ -30,15 +31,19 @@ namespace WebApi.Controllers
         {
             user = await _loginService.GetUser(dto);
             if (user is null)
+            {
+                Log.Information($"Login => Usuario {dto.UserName} Ha introducido credenciales inválidas");
                 return Unauthorized(new { message = "Credenciales inválidas." });
+            }
 
             jwtToken = GenerateToken(user);
+            Log.Information($"Login => Usuario {user.UserName} se ha logeado con éxito");
             return Ok(new { token = jwtToken, user = new { user.Name, user.UserName,  user.Email } });
         }
 
         [Authorize]
         [HttpGet, Route("CheckToken")]
-        public async Task<IActionResult> Login()
+        public async Task<IActionResult> CheckToken()
         {
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)

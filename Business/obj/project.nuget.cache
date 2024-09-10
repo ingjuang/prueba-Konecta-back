@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pca/VjN/feY=",
+  "dgSpecHash": "0SSDxVjz/+Y=",
   "success": true,
-  "projectFilePath": "D:\\proyectos\\prueba_konecta_back\\Business\\Business.csproj",
+  "projectFilePath": "D:\\proyectos\\prueba-Konecta-back\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juand\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.4\\microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "C:\\Users\\juand\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.4\\microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",

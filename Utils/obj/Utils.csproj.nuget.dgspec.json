@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proyectos\\prueba_konecta_back\\Utils\\Utils.csproj": {}
+    "D:\\proyectos\\prueba-Konecta-back\\Utils\\Utils.csproj": {}
   },
   "projects": {
-    "D:\\proyectos\\prueba_konecta_back\\Utils\\Utils.csproj": {
+    "D:\\proyectos\\prueba-Konecta-back\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\prueba_konecta_back\\Utils\\Utils.csproj",
+        "projectUniqueName": "D:\\proyectos\\prueba-Konecta-back\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "D:\\proyectos\\prueba_konecta_back\\Utils\\Utils.csproj",
+        "projectPath": "D:\\proyectos\\prueba-Konecta-back\\Utils\\Utils.csproj",
         "packagesPath": "C:\\Users\\juand\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\prueba_konecta_back\\Utils\\obj\\",
+        "outputPath": "D:\\proyectos\\prueba-Konecta-back\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\juand\\AppData\\Roaming\\NuGet\\NuGet.Config",

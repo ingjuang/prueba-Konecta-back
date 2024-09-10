@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cj4NlcxtbF8=",
+  "dgSpecHash": "xu/M3PcbGDI=",
   "success": true,
-  "projectFilePath": "D:\\proyectos\\prueba_konecta_back\\Data\\Data.csproj",
+  "projectFilePath": "D:\\proyectos\\prueba-Konecta-back\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juand\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\juand\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

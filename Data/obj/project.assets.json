@@ -2373,11 +2373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\proyectos\\prueba_konecta_back\\Data\\Data.csproj",
+      "projectUniqueName": "D:\\proyectos\\prueba-Konecta-back\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "D:\\proyectos\\prueba_konecta_back\\Data\\Data.csproj",
+      "projectPath": "D:\\proyectos\\prueba-Konecta-back\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\juand\\.nuget\\packages\\",
-      "outputPath": "D:\\proyectos\\prueba_konecta_back\\Data\\obj\\",
+      "outputPath": "D:\\proyectos\\prueba-Konecta-back\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juand\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2395,8 +2395,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\proyectos\\prueba_konecta_back\\Core\\Core.csproj": {
-              "projectPath": "D:\\proyectos\\prueba_konecta_back\\Core\\Core.csproj"
+            "D:\\proyectos\\prueba-Konecta-back\\Core\\Core.csproj": {
+              "projectPath": "D:\\proyectos\\prueba-Konecta-back\\Core\\Core.csproj"
             }
           }
         }

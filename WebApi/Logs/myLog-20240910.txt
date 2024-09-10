@@ -1,0 +1,1397 @@
+2024-09-10 13:03:20.964 -05:00 [INF] Login => Usuario juanda se ha logeado con éxito
+2024-09-10 13:14:56.424 -05:00 [INF] User profile is available. Using 'C:\Users\juand\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 13:14:56.505 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 13:14:56.507 -05:00 [INF] Hosting environment: Development
+2024-09-10 13:14:56.507 -05:00 [INF] Content root path: D:\proyectos\prueba-Konecta-back\WebApi
+2024-09-10 13:14:56.529 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/swagger/index.html - null null
+2024-09-10 13:14:56.648 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/swagger/index.html - 200 null text/html;charset=utf-8 122.6589ms
+2024-09-10 13:14:56.691 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-10 13:14:56.691 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/_vs/browserLink - null null
+2024-09-10 13:14:56.694 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 1.9075ms
+2024-09-10 13:14:56.726 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.2572ms
+2024-09-10 13:14:56.833 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/swagger/v1/swagger.json - null null
+2024-09-10 13:14:56.875 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.5907ms
+2024-09-10 13:16:11.271 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:16:11.275 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:11.277 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 5.3883ms
+2024-09-10 13:16:11.291 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:16:11.292 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:11.359 -05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/09/2024 12:31:47 a. m.', Current time (UTC): '10/09/2024 6:16:11 p. m.'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-09-10 13:16:11.383 -05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '10/09/2024 12:31:47 a. m.', Current time (UTC): '10/09/2024 6:16:11 p. m.'.
+2024-09-10 13:16:11.386 -05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-09-10 13:16:11.388 -05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-10 13:16:11.389 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 401 null null 97.9603ms
+2024-09-10 13:16:19.237 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login - null null
+2024-09-10 13:16:19.238 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:19.238 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login - 204 null null 1.1435ms
+2024-09-10 13:16:19.240 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/Login - application/json 38
+2024-09-10 13:16:19.240 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:19.243 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 13:16:19.253 -05:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Core.DTOs.LoginDto) on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:16:19.283 -05:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2024-09-10 13:16:22.046 -05:00 [INF] Executed DbCommand (191ms) [Parameters=[@__dto_UserName_0='?', @__dto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__dto_UserName_0 AND u."Password" = @__dto_Password_1
+LIMIT 1
+2024-09-10 13:16:22.081 -05:00 [INF] Login => Usuario juanda se ha logeado con éxito
+2024-09-10 13:16:22.084 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:16:22.091 -05:00 [INF] Executed action WebApi.Controllers.LoginController.Login (WebApi) in 2836.5535ms
+2024-09-10 13:16:22.091 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 13:16:22.095 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/Login - 200 null application/json; charset=utf-8 2854.5523ms
+2024-09-10 13:16:22.111 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=juanda - null null
+2024-09-10 13:16:22.111 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:22.112 -05:00 [INF] Executing endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 13:16:22.118 -05:00 [INF] Route matched with {action = "HaveTFA", controller = "TwoFactor"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] HaveTFA(System.String) on controller WebApi.Controllers.TwoFactorController (WebApi).
+2024-09-10 13:16:22.121 -05:00 [INF] Se verifica si el usuario ya tiene el TFA activado
+2024-09-10 13:16:22.295 -05:00 [INF] Executed DbCommand (163ms) [Parameters=[@__userName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__userName_0
+LIMIT 1
+2024-09-10 13:16:22.297 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-09-10 13:16:22.298 -05:00 [INF] Executed action WebApi.Controllers.TwoFactorController.HaveTFA (WebApi) in 180.3879ms
+2024-09-10 13:16:22.298 -05:00 [INF] Executed endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 13:16:22.298 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=juanda - 200 null application/json; charset=utf-8 187.7916ms
+2024-09-10 13:16:30.396 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:16:30.397 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:30.397 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 1.0884ms
+2024-09-10 13:16:30.399 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:16:30.400 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:30.407 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:16:30.410 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:16:30.608 -05:00 [INF] Executed DbCommand (169ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:16:30.609 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:16:30.610 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:16:30.614 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 203.8554ms
+2024-09-10 13:16:30.614 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:16:30.614 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 214.3712ms
+2024-09-10 13:16:54.414 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User - null null
+2024-09-10 13:16:54.414 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:54.415 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User - 204 null null 0.5246ms
+2024-09-10 13:16:54.416 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/User - application/json 86
+2024-09-10 13:16:54.416 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:54.417 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.CreateUser (WebApi)'
+2024-09-10 13:16:54.419 -05:00 [INF] Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] CreateUser(Core.Models.User) on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:16:54.589 -05:00 [INF] Executed DbCommand (166ms) [Parameters=[@__user_UserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__user_UserName_0
+LIMIT 1
+2024-09-10 13:16:54.796 -05:00 [INF] Executed DbCommand (170ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO prueba_konecta."Users" ("Email", "Name", "Password", "TwoFactorSecret", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2024-09-10 13:16:54.805 -05:00 [INF] Usuario creado exitosamente
+2024-09-10 13:16:54.806 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:16:54.806 -05:00 [INF] Executed action WebApi.Controllers.UserController.CreateUser (WebApi) in 387.2598ms
+2024-09-10 13:16:54.806 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.CreateUser (WebApi)'
+2024-09-10 13:16:54.806 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/User - 200 null application/json; charset=utf-8 389.9293ms
+2024-09-10 13:16:54.810 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:16:54.810 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:54.810 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2557ms
+2024-09-10 13:16:54.812 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:16:54.812 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:16:54.812 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:16:54.812 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:16:54.976 -05:00 [INF] Executed DbCommand (162ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:16:54.978 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:16:54.979 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:16:54.979 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 166.5259ms
+2024-09-10 13:16:54.979 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:16:54.979 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 167.2991ms
+2024-09-10 13:35:12.984 -05:00 [INF] User profile is available. Using 'C:\Users\juand\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-10 13:35:13.066 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-10 13:35:13.067 -05:00 [INF] Hosting environment: Development
+2024-09-10 13:35:13.067 -05:00 [INF] Content root path: D:\proyectos\prueba-Konecta-back\WebApi
+2024-09-10 13:35:13.083 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/swagger/index.html - null null
+2024-09-10 13:35:13.201 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/swagger/index.html - 200 null text/html;charset=utf-8 120.3443ms
+2024-09-10 13:35:13.226 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-10 13:35:13.229 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 2.0708ms
+2024-09-10 13:35:13.242 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/_vs/browserLink - null null
+2024-09-10 13:35:13.268 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.5378ms
+2024-09-10 13:35:13.328 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/swagger/v1/swagger.json - null null
+2024-09-10 13:35:13.379 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.6824ms
+2024-09-10 13:43:17.706 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:43:17.712 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:17.714 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 7.6968ms
+2024-09-10 13:43:17.718 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:43:17.720 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:17.787 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:17.795 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:43:17.838 -05:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2024-09-10 13:43:17.856 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:43:17.865 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 67.4587ms
+2024-09-10 13:43:17.865 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:17.866 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 147.981ms
+2024-09-10 13:43:18.503 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:43:18.503 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:18.510 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:18.510 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:43:18.514 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:43:18.514 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 3.992ms
+2024-09-10 13:43:18.514 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:18.514 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 11.5713ms
+2024-09-10 13:43:18.562 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:43:18.563 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:18.563 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.8081ms
+2024-09-10 13:43:18.566 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:43:18.566 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:18.568 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:43:18.570 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:43:20.647 -05:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:43:20.698 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:43:20.698 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:43:20.702 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 2132.2113ms
+2024-09-10 13:43:20.703 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:43:20.706 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 2140.0293ms
+2024-09-10 13:43:27.486 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:43:27.486 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:27.486 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.6288ms
+2024-09-10 13:43:27.490 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:43:27.490 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:27.491 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:27.491 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:43:27.493 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:43:27.493 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 2.325ms
+2024-09-10 13:43:27.494 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:43:27.494 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 3.6634ms
+2024-09-10 13:43:27.525 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:43:27.525 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:27.525 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.4385ms
+2024-09-10 13:43:27.527 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:43:27.527 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:43:27.528 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:43:27.528 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:43:27.690 -05:00 [INF] Executed DbCommand (153ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:43:27.690 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:43:27.690 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:43:27.691 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 162.8421ms
+2024-09-10 13:43:27.691 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:43:27.691 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 163.7194ms
+2024-09-10 13:44:28.649 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:44:28.649 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.649 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.4973ms
+2024-09-10 13:44:28.668 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:44:28.668 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.669 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:44:28.669 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:44:28.669 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:44:28.669 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.6277ms
+2024-09-10 13:44:28.669 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:44:28.670 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.833ms
+2024-09-10 13:44:28.782 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:44:28.783 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.783 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.423ms
+2024-09-10 13:44:28.785 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:44:28.785 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.786 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:44:28.786 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:44:28.786 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:44:28.787 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.6562ms
+2024-09-10 13:44:28.787 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:44:28.787 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.6162ms
+2024-09-10 13:44:28.962 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:44:28.962 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.962 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.4484ms
+2024-09-10 13:44:28.964 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:44:28.964 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:44:28.965 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:44:28.965 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:44:29.158 -05:00 [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:44:29.158 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:44:29.158 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:44:29.159 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 193.7924ms
+2024-09-10 13:44:29.159 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:44:29.159 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 194.7167ms
+2024-09-10 13:45:42.325 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:45:42.325 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.325 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.6571ms
+2024-09-10 13:45:42.327 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:45:42.328 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.328 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:45:42.328 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:45:42.329 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:45:42.329 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.8041ms
+2024-09-10 13:45:42.329 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:45:42.329 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.9633ms
+2024-09-10 13:45:42.337 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:45:42.337 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.337 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.6682ms
+2024-09-10 13:45:42.348 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:45:42.348 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.348 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:45:42.361 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:45:42.362 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 14.0233ms
+2024-09-10 13:45:42.480 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=e_l1mzcQ92oCDbs_fqP0jg - null null
+2024-09-10 13:45:42.480 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.480 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:45:42.575 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:45:42.575 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.575 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.5549ms
+2024-09-10 13:45:42.585 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:45:42.585 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.586 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:45:42.586 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:45:42.622 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:45:42.622 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.623 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:45:42.623 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:45:42.624 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:45:42.625 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 1.8104ms
+2024-09-10 13:45:42.625 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:45:42.625 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 2.6647ms
+2024-09-10 13:45:42.629 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:45:42.629 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.629 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.327ms
+2024-09-10 13:45:42.637 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:45:42.637 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.638 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:45:42.638 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:45:42.638 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.2499ms
+2024-09-10 13:45:42.655 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=yoo9mIYPaxjiaegZxa4Rkw - null null
+2024-09-10 13:45:42.655 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:45:42.655 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:45:42.747 -05:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:45:42.747 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:45:42.747 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:45:42.748 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 161.7741ms
+2024-09-10 13:45:42.748 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:45:42.748 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 162.6853ms
+2024-09-10 13:46:54.056 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/notificationHub - null null
+2024-09-10 13:46:54.061 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:46:54.062 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:46:54.062 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/notificationHub - 400 null text/plain 6.0944ms
+2024-09-10 13:46:54.168 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/favicon.ico - null null
+2024-09-10 13:46:54.168 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/favicon.ico - 404 null null 0.8495ms
+2024-09-10 13:46:54.169 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44302/favicon.ico, Response status code: 404
+2024-09-10 13:54:56.329 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:54:56.329 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=e_l1mzcQ92oCDbs_fqP0jg - 101 null null 553849.5271ms
+2024-09-10 13:54:56.423 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:54:56.424 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=yoo9mIYPaxjiaegZxa4Rkw - 101 null null 553768.8972ms
+2024-09-10 13:54:57.148 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:54:57.149 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.149 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.7414ms
+2024-09-10 13:54:57.158 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:54:57.159 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.160 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:54:57.160 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:54:57.160 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:54:57.164 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 4.5333ms
+2024-09-10 13:54:57.164 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:54:57.164 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 6.1357ms
+2024-09-10 13:54:57.165 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:54:57.165 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.166 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 1.0333ms
+2024-09-10 13:54:57.173 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:54:57.174 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.174 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:54:57.175 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:54:57.175 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.8098ms
+2024-09-10 13:54:57.274 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:54:57.274 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.275 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:54:57.275 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:54:57.275 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:54:57.275 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5683ms
+2024-09-10 13:54:57.275 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:54:57.275 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.4053ms
+2024-09-10 13:54:57.290 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:54:57.290 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.291 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3552ms
+2024-09-10 13:54:57.299 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:54:57.299 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=5DGf6fPtvtMaqm4UWC_kOA - null null
+2024-09-10 13:54:57.300 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.300 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.300 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:54:57.300 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:54:57.300 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:54:57.301 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.1632ms
+2024-09-10 13:54:57.344 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=2aQVmSf3ysyuTfVWMzPMtQ - null null
+2024-09-10 13:54:57.345 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.345 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:54:57.371 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:54:57.371 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.371 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.4409ms
+2024-09-10 13:54:57.378 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:54:57.378 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:54:57.379 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:54:57.379 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:54:58.959 -05:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:54:58.959 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:54:58.959 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:54:58.960 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 1580.4238ms
+2024-09-10 13:54:58.960 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:54:58.960 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 1582.3311ms
+2024-09-10 13:55:50.349 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:55:50.349 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=5DGf6fPtvtMaqm4UWC_kOA - 101 null null 53049.6142ms
+2024-09-10 13:55:50.414 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:55:50.414 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=2aQVmSf3ysyuTfVWMzPMtQ - 101 null null 53069.3564ms
+2024-09-10 13:55:50.519 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:55:50.520 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.520 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.3559ms
+2024-09-10 13:55:50.521 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:55:50.521 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.521 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1529ms
+2024-09-10 13:55:50.527 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:55:50.528 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.528 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:55:50.528 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:55:50.529 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:55:50.529 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.734ms
+2024-09-10 13:55:50.529 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:55:50.529 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.8075ms
+2024-09-10 13:55:50.533 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:55:50.533 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.533 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:55:50.534 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:55:50.534 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5213ms
+2024-09-10 13:55:50.592 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=xQR6Rd1cfN2Akf5hCDOn3g - null null
+2024-09-10 13:55:50.592 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.593 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:55:50.661 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:55:50.662 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.662 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2722ms
+2024-09-10 13:55:50.665 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:55:50.665 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.665 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:55:50.665 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:55:50.666 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:55:50.666 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.6831ms
+2024-09-10 13:55:50.666 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:55:50.666 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.3636ms
+2024-09-10 13:55:50.666 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:55:50.666 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.667 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2138ms
+2024-09-10 13:55:50.668 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:55:50.668 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.668 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:55:50.669 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:55:50.669 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5234ms
+2024-09-10 13:55:50.756 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=tJPuo-a9ZDk3cza4b1iyaQ - null null
+2024-09-10 13:55:50.756 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.756 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:55:50.808 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:55:50.814 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.815 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 7.2649ms
+2024-09-10 13:55:50.818 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:55:50.818 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:55:50.818 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:55:50.818 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:55:50.986 -05:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:55:50.986 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:55:50.986 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:55:50.987 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 167.9945ms
+2024-09-10 13:55:50.987 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:55:50.987 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 168.9554ms
+2024-09-10 13:58:50.416 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:58:50.417 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=xQR6Rd1cfN2Akf5hCDOn3g - 101 null null 179825.5088ms
+2024-09-10 13:58:50.439 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:58:50.439 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=tJPuo-a9ZDk3cza4b1iyaQ - 101 null null 179683.0934ms
+2024-09-10 13:58:50.722 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:50.722 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.722 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2595ms
+2024-09-10 13:58:50.729 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:58:50.729 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.730 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.288ms
+2024-09-10 13:58:50.732 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:50.732 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.733 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:50.733 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:58:50.734 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:58:50.734 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.7693ms
+2024-09-10 13:58:50.734 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:50.734 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.6177ms
+2024-09-10 13:58:50.735 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:58:50.735 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.735 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:50.735 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:50.736 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.498ms
+2024-09-10 13:58:50.786 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=Q7Eup_tbODRgrKYVwU-7XA - null null
+2024-09-10 13:58:50.786 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.786 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:58:50.947 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:50.947 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.947 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.3738ms
+2024-09-10 13:58:50.952 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:50.952 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.953 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:50.953 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:58:50.954 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:58:50.954 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.6898ms
+2024-09-10 13:58:50.954 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:50.954 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 2.675ms
+2024-09-10 13:58:50.969 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:58:50.969 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.969 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.4788ms
+2024-09-10 13:58:50.971 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:58:50.971 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:50.971 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:50.972 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:50.972 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5722ms
+2024-09-10 13:58:51.067 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=208C7a9h3zbByd1HDioJlA - null null
+2024-09-10 13:58:51.067 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:51.068 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:58:51.138 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:58:51.138 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:51.138 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2479ms
+2024-09-10 13:58:51.140 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:58:51.140 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:51.141 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:58:51.141 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:58:51.307 -05:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:58:51.308 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:58:51.308 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:58:51.308 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 167.3571ms
+2024-09-10 13:58:51.308 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:58:51.308 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 168.0886ms
+2024-09-10 13:58:53.402 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:58:53.402 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=Q7Eup_tbODRgrKYVwU-7XA - 101 null null 2616.3252ms
+2024-09-10 13:58:53.423 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:58:53.423 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=208C7a9h3zbByd1HDioJlA - 101 null null 2356.0577ms
+2024-09-10 13:58:53.547 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:53.547 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.547 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:53.548 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:58:53.548 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:58:53.548 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.8669ms
+2024-09-10 13:58:53.549 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:53.549 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.8113ms
+2024-09-10 13:58:53.552 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:58:53.552 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.552 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1571ms
+2024-09-10 13:58:53.560 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:58:53.560 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.560 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:53.560 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:53.560 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6465ms
+2024-09-10 13:58:53.588 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=zveQ_ffApaJjuJwTftpryA - null null
+2024-09-10 13:58:53.588 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.588 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:58:53.774 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:53.774 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.774 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.4355ms
+2024-09-10 13:58:53.786 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 13:58:53.786 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 13:58:53.786 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.786 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.787 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3366ms
+2024-09-10 13:58:53.787 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:53.787 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 13:58:53.788 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 13:58:53.789 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 1.0391ms
+2024-09-10 13:58:53.789 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 13:58:53.789 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 2.3643ms
+2024-09-10 13:58:53.792 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 13:58:53.793 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.793 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:53.793 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 13:58:53.793 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7349ms
+2024-09-10 13:58:53.902 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=kvJkCP_Xm9FyEOk3aSUypA - null null
+2024-09-10 13:58:53.902 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.902 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 13:58:53.962 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:58:53.962 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.962 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2557ms
+2024-09-10 13:58:53.967 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 13:58:53.967 -05:00 [INF] CORS policy execution successful.
+2024-09-10 13:58:53.968 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:58:53.968 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 13:58:54.135 -05:00 [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 13:58:54.135 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 13:58:54.135 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 13:58:54.136 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 167.8817ms
+2024-09-10 13:58:54.136 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 13:58:54.136 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 168.5684ms
+2024-09-10 13:58:55.867 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 13:58:55.868 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=zveQ_ffApaJjuJwTftpryA - 101 null null 2279.7845ms
+2024-09-10 14:00:08.249 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:00:08.249 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=kvJkCP_Xm9FyEOk3aSUypA - 101 null null 74347.5993ms
+2024-09-10 14:00:08.591 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:00:08.591 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.591 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2907ms
+2024-09-10 14:00:08.593 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:00:08.593 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.593 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:00:08.593 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:00:08.594 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:00:08.594 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5009ms
+2024-09-10 14:00:08.594 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:00:08.594 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.1889ms
+2024-09-10 14:00:08.598 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:00:08.598 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.598 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1525ms
+2024-09-10 14:00:08.600 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:00:08.600 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.600 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:00:08.601 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:00:08.601 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7245ms
+2024-09-10 14:00:08.697 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=03wX0Jremsld3DSlDOjC_w - null null
+2024-09-10 14:00:08.697 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.697 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:00:08.767 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:00:08.767 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.767 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.4965ms
+2024-09-10 14:00:08.770 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:00:08.770 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:00:08.771 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:00:08.771 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:00:10.439 -05:00 [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:00:10.440 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:00:10.440 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:00:10.440 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 1669.399ms
+2024-09-10 14:00:10.440 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:00:10.440 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 1670.3576ms
+2024-09-10 14:05:36.570 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:05:36.570 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=03wX0Jremsld3DSlDOjC_w - 101 null null 327873.1155ms
+2024-09-10 14:05:36.899 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:05:36.899 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:36.899 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2313ms
+2024-09-10 14:05:36.905 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:05:36.905 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:05:36.905 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:36.905 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:36.906 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2058ms
+2024-09-10 14:05:36.906 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:05:36.906 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:05:36.906 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:05:36.906 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5589ms
+2024-09-10 14:05:36.906 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:05:36.907 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.2036ms
+2024-09-10 14:05:36.910 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:05:36.910 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:36.910 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:05:36.910 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:05:36.910 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5361ms
+2024-09-10 14:05:37.005 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=96xAy8-ll5CxQNpGbdLJIw - null null
+2024-09-10 14:05:37.005 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:37.005 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:05:37.063 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:05:37.063 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:37.063 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2162ms
+2024-09-10 14:05:37.067 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:05:37.067 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:05:37.068 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:05:37.068 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:05:38.626 -05:00 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:05:38.626 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:05:38.626 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:05:38.627 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 1558.6818ms
+2024-09-10 14:05:38.627 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:05:38.627 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 1559.4824ms
+2024-09-10 14:06:22.636 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:06:22.636 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=96xAy8-ll5CxQNpGbdLJIw - 101 null null 45631.7926ms
+2024-09-10 14:06:22.936 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:06:22.937 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:22.937 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2865ms
+2024-09-10 14:06:22.939 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:06:22.939 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:22.939 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:06:22.939 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:06:22.940 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:06:22.940 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5387ms
+2024-09-10 14:06:22.940 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:06:22.940 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.1918ms
+2024-09-10 14:06:22.945 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:06:22.946 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:22.946 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1693ms
+2024-09-10 14:06:22.948 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:06:22.948 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:22.948 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:06:22.948 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:06:22.948 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5157ms
+2024-09-10 14:06:23.036 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=0NQXnLassME3G4l9JMHrDQ - null null
+2024-09-10 14:06:23.036 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:23.036 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:06:23.093 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:06:23.093 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:23.093 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2748ms
+2024-09-10 14:06:23.095 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:06:23.095 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:06:23.096 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:06:23.096 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:06:23.262 -05:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:06:23.262 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:06:23.262 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:06:23.263 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 167.0745ms
+2024-09-10 14:06:23.263 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:06:23.263 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 167.6921ms
+2024-09-10 14:07:47.399 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:07:47.400 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=0NQXnLassME3G4l9JMHrDQ - 101 null null 84363.6545ms
+2024-09-10 14:07:47.737 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:07:47.737 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.737 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2778ms
+2024-09-10 14:07:47.739 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:07:47.739 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.739 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:07:47.739 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:07:47.740 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:07:47.740 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5031ms
+2024-09-10 14:07:47.740 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:07:47.740 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.0877ms
+2024-09-10 14:07:47.746 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:07:47.746 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.746 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1719ms
+2024-09-10 14:07:47.748 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:07:47.748 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.748 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:07:47.748 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:07:47.748 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.545ms
+2024-09-10 14:07:47.851 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=AZryB4Dnh2iHHUgg766u6Q - null null
+2024-09-10 14:07:47.851 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.851 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:07:47.909 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:07:47.909 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.909 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2877ms
+2024-09-10 14:07:47.912 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:07:47.912 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:07:47.912 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:07:47.912 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:07:48.082 -05:00 [INF] Executed DbCommand (169ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:07:48.082 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:07:48.082 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:07:48.083 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 170.4186ms
+2024-09-10 14:07:48.083 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:07:48.083 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 171.1966ms
+2024-09-10 14:08:21.715 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:08:21.715 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=AZryB4Dnh2iHHUgg766u6Q - 101 null null 33863.545ms
+2024-09-10 14:08:22.001 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:08:22.001 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.001 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.24ms
+2024-09-10 14:08:22.009 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:08:22.010 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.010 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:08:22.010 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:08:22.011 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:08:22.011 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.6798ms
+2024-09-10 14:08:22.011 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:08:22.011 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.8674ms
+2024-09-10 14:08:22.014 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:08:22.014 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.014 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2006ms
+2024-09-10 14:08:22.017 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:08:22.017 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.017 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:08:22.017 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:08:22.017 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7269ms
+2024-09-10 14:08:22.106 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=NKqX4aOEuydeXF3LOGCiCA - null null
+2024-09-10 14:08:22.106 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.106 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:08:22.173 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:08:22.173 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.173 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.249ms
+2024-09-10 14:08:22.175 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:08:22.175 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:08:22.176 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:08:22.176 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:08:22.341 -05:00 [INF] Executed DbCommand (165ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:08:22.342 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:08:22.342 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:08:22.342 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 166.344ms
+2024-09-10 14:08:22.342 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:08:22.342 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 166.9081ms
+2024-09-10 14:09:23.018 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:09:23.018 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=NKqX4aOEuydeXF3LOGCiCA - 101 null null 60911.5875ms
+2024-09-10 14:09:23.349 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:09:23.349 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.349 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.1982ms
+2024-09-10 14:09:23.352 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:09:23.352 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.352 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:09:23.352 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:09:23.353 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:09:23.353 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.4335ms
+2024-09-10 14:09:23.353 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:09:23.353 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 0.855ms
+2024-09-10 14:09:23.359 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:09:23.359 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.359 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3199ms
+2024-09-10 14:09:23.361 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:09:23.361 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.361 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/notificationHub/negotiate?negotiateVersion=1 - 404 null null 0.3358ms
+2024-09-10 14:09:23.361 -05:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST https://localhost:44302/api/notificationHub/negotiate, Response status code: 404
+2024-09-10 14:09:23.527 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:09:23.527 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.527 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2586ms
+2024-09-10 14:09:23.531 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:09:23.531 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:23.531 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:09:23.531 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:09:23.697 -05:00 [INF] Executed DbCommand (166ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:09:23.698 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:09:23.698 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:09:23.698 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 167.1783ms
+2024-09-10 14:09:23.698 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:09:23.698 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 167.6719ms
+2024-09-10 14:09:40.684 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:09:40.684 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.684 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2118ms
+2024-09-10 14:09:40.686 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:09:40.686 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.687 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:09:40.687 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:09:40.687 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:09:40.687 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.4434ms
+2024-09-10 14:09:40.687 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:09:40.687 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.0658ms
+2024-09-10 14:09:40.692 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:09:40.692 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.692 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2069ms
+2024-09-10 14:09:40.694 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:09:40.694 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.694 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:09:40.695 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:09:40.695 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6235ms
+2024-09-10 14:09:40.789 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=6WLSzLV09pYrDjr3vx8juA - null null
+2024-09-10 14:09:40.789 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.789 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:09:40.844 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:09:40.844 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.844 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2007ms
+2024-09-10 14:09:40.846 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:09:40.846 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:09:40.846 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:09:40.846 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:09:41.011 -05:00 [INF] Executed DbCommand (164ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:09:41.011 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:09:41.011 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:09:41.012 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 165.4547ms
+2024-09-10 14:09:41.012 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:09:41.012 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 165.9242ms
+2024-09-10 14:12:28.968 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:12:28.968 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=6WLSzLV09pYrDjr3vx8juA - 101 null null 168178.7046ms
+2024-09-10 14:12:29.374 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:12:29.374 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.374 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login/CheckToken - 204 null null 0.2361ms
+2024-09-10 14:12:29.379 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:12:29.379 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/Login/CheckToken - null null
+2024-09-10 14:12:29.379 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.379 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.379 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2603ms
+2024-09-10 14:12:29.379 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:12:29.380 -05:00 [INF] Route matched with {action = "CheckToken", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CheckToken() on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:12:29.380 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:12:29.380 -05:00 [INF] Executed action WebApi.Controllers.LoginController.CheckToken (WebApi) in 0.5879ms
+2024-09-10 14:12:29.380 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.CheckToken (WebApi)'
+2024-09-10 14:12:29.380 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/Login/CheckToken - 200 null application/json; charset=utf-8 1.3436ms
+2024-09-10 14:12:29.384 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:12:29.384 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.384 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:12:29.384 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:12:29.385 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5744ms
+2024-09-10 14:12:29.488 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=9ly1W-YLcDKzlZGk5gvhUw - null null
+2024-09-10 14:12:29.488 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.488 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:12:29.544 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:12:29.544 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.544 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.2323ms
+2024-09-10 14:12:29.548 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:12:29.548 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:29.548 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:12:29.548 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:12:30.977 -05:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:12:30.977 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:12:30.978 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:12:30.978 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 1429.6961ms
+2024-09-10 14:12:30.978 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:12:30.978 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 1430.451ms
+2024-09-10 14:12:49.062 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User - null null
+2024-09-10 14:12:49.062 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:49.062 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User - 204 null null 0.4746ms
+2024-09-10 14:12:49.064 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/User - application/json 85
+2024-09-10 14:12:49.064 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:49.065 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.CreateUser (WebApi)'
+2024-09-10 14:12:49.069 -05:00 [INF] Route matched with {action = "CreateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] CreateUser(Core.Models.User) on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:12:49.274 -05:00 [INF] Executed DbCommand (157ms) [Parameters=[@__user_UserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__user_UserName_0
+LIMIT 1
+2024-09-10 14:12:49.471 -05:00 [INF] Executed DbCommand (159ms) [Parameters=[@p0='?', @p1='?', @p2='?', @p3='?', @p4='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO prueba_konecta."Users" ("Email", "Name", "Password", "TwoFactorSecret", "UserName")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2024-09-10 14:12:49.480 -05:00 [INF] Usuario creado exitosamente
+2024-09-10 14:12:49.480 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:12:49.480 -05:00 [INF] Executed action WebApi.Controllers.UserController.CreateUser (WebApi) in 411.4349ms
+2024-09-10 14:12:49.480 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.CreateUser (WebApi)'
+2024-09-10 14:12:49.480 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/User - 200 null application/json; charset=utf-8 416.115ms
+2024-09-10 14:12:49.486 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:12:49.486 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:49.487 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/User/GetUsers - 204 null null 0.1413ms
+2024-09-10 14:12:49.488 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/User/GetUsers - null null
+2024-09-10 14:12:49.488 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:12:49.488 -05:00 [INF] Executing endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:12:49.488 -05:00 [INF] Route matched with {action = "GetUsers", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetUsers() on controller WebApi.Controllers.UserController (WebApi).
+2024-09-10 14:12:49.640 -05:00 [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+2024-09-10 14:12:49.640 -05:00 [ERR] Error al buscar usuarios
+2024-09-10 14:12:49.640 -05:00 [INF] Executing OkObjectResult, writing value of type 'Utils.Responses.PetitionResponse'.
+2024-09-10 14:12:49.641 -05:00 [INF] Executed action WebApi.Controllers.UserController.GetUsers (WebApi) in 152.3154ms
+2024-09-10 14:12:49.641 -05:00 [INF] Executed endpoint 'WebApi.Controllers.UserController.GetUsers (WebApi)'
+2024-09-10 14:12:49.641 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/User/GetUsers - 200 null application/json; charset=utf-8 152.69ms
+2024-09-10 14:13:02.886 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:13:02.886 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=9ly1W-YLcDKzlZGk5gvhUw - 101 null null 33398.9152ms
+2024-09-10 14:13:03.195 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:03.196 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:03.196 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3259ms
+2024-09-10 14:13:03.198 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:03.198 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:03.198 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:03.198 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:03.198 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5723ms
+2024-09-10 14:13:03.294 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=jfVHxu4oKnpzHgnGwXufdQ - null null
+2024-09-10 14:13:03.294 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:03.294 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:13:37.401 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:13:37.402 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=jfVHxu4oKnpzHgnGwXufdQ - 101 null null 34108.0519ms
+2024-09-10 14:13:37.789 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:37.790 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:37.790 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2728ms
+2024-09-10 14:13:37.795 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:37.795 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:37.796 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:37.796 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:37.802 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 6.4691ms
+2024-09-10 14:13:38.154 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:38.154 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:38.154 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.265ms
+2024-09-10 14:13:38.159 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:38.159 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:38.159 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:38.159 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:38.159 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6421ms
+2024-09-10 14:13:38.528 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:38.528 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:38.528 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2336ms
+2024-09-10 14:13:38.530 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:38.530 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:38.530 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:38.530 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:38.530 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5912ms
+2024-09-10 14:13:38.954 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:38.954 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:38.954 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2266ms
+2024-09-10 14:13:39.314 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:39.314 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:39.314 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.5427ms
+2024-09-10 14:13:39.328 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:39.329 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:39.329 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:39.329 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:39.329 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7409ms
+2024-09-10 14:13:39.703 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:39.703 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:39.703 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.419ms
+2024-09-10 14:13:40.043 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:40.043 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.044 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3335ms
+2024-09-10 14:13:40.046 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:40.046 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.046 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.046 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.046 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4808ms
+2024-09-10 14:13:40.370 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:40.371 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.371 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2068ms
+2024-09-10 14:13:40.376 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:40.377 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.377 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.377 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.377 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.9594ms
+2024-09-10 14:13:40.689 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:40.689 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.689 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2888ms
+2024-09-10 14:13:40.699 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:40.699 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:40.699 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.699 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:40.700 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6284ms
+2024-09-10 14:13:41.004 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:41.004 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.004 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1891ms
+2024-09-10 14:13:41.010 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:41.010 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.010 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.010 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.010 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5345ms
+2024-09-10 14:13:41.332 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:41.332 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.332 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2732ms
+2024-09-10 14:13:41.340 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:41.340 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.340 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.341 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.341 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7833ms
+2024-09-10 14:13:41.712 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:41.712 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.712 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3656ms
+2024-09-10 14:13:41.722 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:41.722 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:41.722 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.722 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:41.723 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.8503ms
+2024-09-10 14:13:42.039 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:42.040 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.040 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1915ms
+2024-09-10 14:13:42.045 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:42.045 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.045 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.045 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.045 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6449ms
+2024-09-10 14:13:42.355 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:42.355 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.355 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2085ms
+2024-09-10 14:13:42.362 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:42.362 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.362 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.362 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.362 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5798ms
+2024-09-10 14:13:42.688 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:42.688 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.688 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3328ms
+2024-09-10 14:13:42.700 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:42.700 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:42.700 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.701 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:42.701 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.2032ms
+2024-09-10 14:13:43.007 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:43.007 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.007 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2141ms
+2024-09-10 14:13:43.009 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:43.009 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.009 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.009 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.009 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.597ms
+2024-09-10 14:13:43.340 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:43.340 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.340 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2337ms
+2024-09-10 14:13:43.349 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:43.350 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.350 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.350 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.350 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6832ms
+2024-09-10 14:13:43.660 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:43.661 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.661 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.318ms
+2024-09-10 14:13:43.678 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:43.678 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.679 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.679 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:43.679 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.653ms
+2024-09-10 14:13:43.993 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:43.993 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:43.994 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1974ms
+2024-09-10 14:13:44.001 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:44.001 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.001 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.002 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.002 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5235ms
+2024-09-10 14:13:44.324 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:44.324 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.324 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2584ms
+2024-09-10 14:13:44.334 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:44.334 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.335 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.336 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.336 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.8381ms
+2024-09-10 14:13:44.648 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:44.648 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.648 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2146ms
+2024-09-10 14:13:44.650 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:44.650 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.650 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.651 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.651 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6264ms
+2024-09-10 14:13:44.973 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:44.973 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.973 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2216ms
+2024-09-10 14:13:44.979 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:44.979 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:44.980 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.980 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:44.980 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6008ms
+2024-09-10 14:13:45.302 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:45.302 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:45.303 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.4903ms
+2024-09-10 14:13:45.307 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:45.307 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:45.307 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:45.308 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:45.308 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6671ms
+2024-09-10 14:13:45.623 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:45.624 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:45.624 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.49ms
+2024-09-10 14:13:45.629 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:45.629 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:45.629 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:45.629 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:45.629 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6726ms
+2024-09-10 14:13:45.987 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:45.987 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:45.988 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3311ms
+2024-09-10 14:13:46.005 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:46.005 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:46.005 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.006 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.006 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.7104ms
+2024-09-10 14:13:46.323 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:46.323 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:46.324 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3849ms
+2024-09-10 14:13:46.334 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:46.334 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:46.334 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.335 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.335 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 1.1527ms
+2024-09-10 14:13:46.668 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:46.668 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:46.668 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2141ms
+2024-09-10 14:13:46.680 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:46.680 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:46.680 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.680 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:46.680 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6073ms
+2024-09-10 14:13:47.007 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:47.007 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.008 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3895ms
+2024-09-10 14:13:47.012 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:47.012 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.013 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.013 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.013 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.701ms
+2024-09-10 14:13:47.335 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:47.335 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.335 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2699ms
+2024-09-10 14:13:47.353 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:47.353 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.353 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.354 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.354 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5986ms
+2024-09-10 14:13:47.673 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:47.673 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.673 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1927ms
+2024-09-10 14:13:47.674 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:47.674 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:47.674 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.675 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:47.675 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4695ms
+2024-09-10 14:13:48.006 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:48.006 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:48.007 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2659ms
+2024-09-10 14:13:48.021 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:48.021 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:48.021 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:48.022 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:48.022 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4934ms
+2024-09-10 14:13:48.383 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:48.384 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:48.384 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 1.2954ms
+2024-09-10 14:13:48.719 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:48.719 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:48.719 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3317ms
+2024-09-10 14:13:48.727 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:48.727 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:48.727 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:48.727 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:48.727 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.6865ms
+2024-09-10 14:13:49.077 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:49.077 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:49.077 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2055ms
+2024-09-10 14:13:49.079 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:13:49.079 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:49.079 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:49.079 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:13:49.080 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4213ms
+2024-09-10 14:13:49.113 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=6N0Ht7L1e2F-fMEIjWjl7Q - null null
+2024-09-10 14:13:49.113 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:49.114 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:13:51.595 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:13:51.596 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=6N0Ht7L1e2F-fMEIjWjl7Q - 101 null null 2482.193ms
+2024-09-10 14:13:58.446 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.446 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.446 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2362ms
+2024-09-10 14:13:58.549 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.550 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.550 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2155ms
+2024-09-10 14:13:58.657 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.657 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.658 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1847ms
+2024-09-10 14:13:58.758 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.758 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.758 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1998ms
+2024-09-10 14:13:58.865 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.865 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.866 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2609ms
+2024-09-10 14:13:58.962 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:58.962 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:58.962 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1924ms
+2024-09-10 14:13:59.063 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.063 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.063 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2992ms
+2024-09-10 14:13:59.170 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.170 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.171 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.4287ms
+2024-09-10 14:13:59.269 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.269 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.269 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2058ms
+2024-09-10 14:13:59.370 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.370 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.370 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2356ms
+2024-09-10 14:13:59.472 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.472 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.472 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2022ms
+2024-09-10 14:13:59.578 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.578 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.578 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2032ms
+2024-09-10 14:13:59.675 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.675 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.675 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1861ms
+2024-09-10 14:13:59.775 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.775 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.775 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2062ms
+2024-09-10 14:13:59.875 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.875 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.875 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1803ms
+2024-09-10 14:13:59.975 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:13:59.975 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:13:59.975 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1977ms
+2024-09-10 14:14:00.070 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.070 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.070 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2043ms
+2024-09-10 14:14:00.172 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.172 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.172 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2681ms
+2024-09-10 14:14:00.274 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.274 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.275 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1909ms
+2024-09-10 14:14:00.371 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.371 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.371 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1889ms
+2024-09-10 14:14:00.476 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.476 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.476 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1839ms
+2024-09-10 14:14:00.566 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.567 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.567 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3501ms
+2024-09-10 14:14:00.663 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.663 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.663 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2001ms
+2024-09-10 14:14:00.760 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.760 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.760 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.179ms
+2024-09-10 14:14:00.857 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.857 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.857 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2476ms
+2024-09-10 14:14:00.960 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:00.960 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:00.960 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2187ms
+2024-09-10 14:14:01.061 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.061 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.062 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1953ms
+2024-09-10 14:14:01.161 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.161 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.161 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2086ms
+2024-09-10 14:14:01.259 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.259 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.259 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1814ms
+2024-09-10 14:14:01.358 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.358 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.358 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2398ms
+2024-09-10 14:14:01.464 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.464 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.464 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2712ms
+2024-09-10 14:14:01.603 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.603 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.603 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2401ms
+2024-09-10 14:14:01.706 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.706 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.706 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2201ms
+2024-09-10 14:14:01.820 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.820 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.820 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2496ms
+2024-09-10 14:14:01.923 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:01.923 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:01.923 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.187ms
+2024-09-10 14:14:02.028 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.028 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.028 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1806ms
+2024-09-10 14:14:02.129 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.129 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.129 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2271ms
+2024-09-10 14:14:02.234 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.234 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.234 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2566ms
+2024-09-10 14:14:02.348 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.348 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.348 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2051ms
+2024-09-10 14:14:02.457 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.457 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.457 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1779ms
+2024-09-10 14:14:02.566 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.566 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.567 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2147ms
+2024-09-10 14:14:02.670 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.670 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.670 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1686ms
+2024-09-10 14:14:02.775 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.775 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.775 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1869ms
+2024-09-10 14:14:02.878 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.878 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.878 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1778ms
+2024-09-10 14:14:02.986 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:02.986 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:02.987 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2541ms
+2024-09-10 14:14:03.090 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:03.090 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:03.090 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.1963ms
+2024-09-10 14:14:03.212 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:03.212 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:03.212 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.191ms
+2024-09-10 14:14:03.313 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:03.314 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:03.314 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2268ms
+2024-09-10 14:14:03.419 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:03.419 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:03.420 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2034ms
+2024-09-10 14:14:35.185 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:35.185 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:35.185 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2284ms
+2024-09-10 14:14:35.197 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:14:35.197 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:35.197 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:35.197 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:35.197 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.5325ms
+2024-09-10 14:14:35.231 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=zRUMx7tylKHbrVA9lBHUMQ - null null
+2024-09-10 14:14:35.231 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:35.231 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:14:42.013 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login - null null
+2024-09-10 14:14:42.013 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:42.013 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login - 204 null null 0.1796ms
+2024-09-10 14:14:42.014 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/Login - application/json 39
+2024-09-10 14:14:42.014 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:42.015 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 14:14:42.017 -05:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Core.DTOs.LoginDto) on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:14:42.177 -05:00 [INF] Executed DbCommand (155ms) [Parameters=[@__dto_UserName_0='?', @__dto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__dto_UserName_0 AND u."Password" = @__dto_Password_1
+LIMIT 1
+2024-09-10 14:14:42.178 -05:00 [INF] Login => Usuario konecta se ha logeado con éxito
+2024-09-10 14:14:42.179 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:14:42.179 -05:00 [INF] Executed action WebApi.Controllers.LoginController.Login (WebApi) in 161.8209ms
+2024-09-10 14:14:42.179 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 14:14:42.179 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/Login - 200 null application/json; charset=utf-8 164.6592ms
+2024-09-10 14:14:42.198 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=konecta - null null
+2024-09-10 14:14:42.199 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:42.199 -05:00 [INF] Executing endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 14:14:42.201 -05:00 [INF] Route matched with {action = "HaveTFA", controller = "TwoFactor"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] HaveTFA(System.String) on controller WebApi.Controllers.TwoFactorController (WebApi).
+2024-09-10 14:14:42.203 -05:00 [INF] Se verifica si el usuario ya tiene el TFA activado
+2024-09-10 14:14:42.358 -05:00 [INF] Executed DbCommand (153ms) [Parameters=[@__userName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__userName_0
+LIMIT 1
+2024-09-10 14:14:42.358 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-09-10 14:14:42.360 -05:00 [INF] Executed action WebApi.Controllers.TwoFactorController.HaveTFA (WebApi) in 158.905ms
+2024-09-10 14:14:42.360 -05:00 [INF] Executed endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 14:14:42.360 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=konecta - 200 null application/json; charset=utf-8 161.7008ms
+2024-09-10 14:14:48.842 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:14:48.842 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=zRUMx7tylKHbrVA9lBHUMQ - 101 null null 13611.5742ms
+2024-09-10 14:14:49.031 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:49.031 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:49.031 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.2307ms
+2024-09-10 14:14:49.034 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:14:49.034 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:49.034 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:49.035 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:49.035 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4289ms
+2024-09-10 14:14:49.042 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=pplN6hpOFlm_d3UlLOg8oA - null null
+2024-09-10 14:14:49.042 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:49.042 -05:00 [INF] Executing endpoint '/notificationHub'
+2024-09-10 14:14:55.005 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/api/Login - null null
+2024-09-10 14:14:55.005 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:55.005 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/api/Login - 204 null null 0.1835ms
+2024-09-10 14:14:55.006 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/api/Login - application/json 38
+2024-09-10 14:14:55.006 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:55.006 -05:00 [INF] Executing endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 14:14:55.006 -05:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Core.DTOs.LoginDto) on controller WebApi.Controllers.LoginController (WebApi).
+2024-09-10 14:14:55.161 -05:00 [INF] Executed DbCommand (153ms) [Parameters=[@__dto_UserName_0='?', @__dto_Password_1='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__dto_UserName_0 AND u."Password" = @__dto_Password_1
+LIMIT 1
+2024-09-10 14:14:55.161 -05:00 [INF] Login => Usuario juanda se ha logeado con éxito
+2024-09-10 14:14:55.162 -05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType2`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-10 14:14:55.162 -05:00 [INF] Executed action WebApi.Controllers.LoginController.Login (WebApi) in 155.4345ms
+2024-09-10 14:14:55.162 -05:00 [INF] Executed endpoint 'WebApi.Controllers.LoginController.Login (WebApi)'
+2024-09-10 14:14:55.162 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/api/Login - 200 null application/json; charset=utf-8 155.7702ms
+2024-09-10 14:14:55.180 -05:00 [INF] Request starting HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=juanda - null null
+2024-09-10 14:14:55.181 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:55.181 -05:00 [INF] Executing endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 14:14:55.181 -05:00 [INF] Route matched with {action = "HaveTFA", controller = "TwoFactor"}. Executing controller action with signature System.Threading.Tasks.Task`1[System.Boolean] HaveTFA(System.String) on controller WebApi.Controllers.TwoFactorController (WebApi).
+2024-09-10 14:14:55.181 -05:00 [INF] Se verifica si el usuario ya tiene el TFA activado
+2024-09-10 14:14:55.335 -05:00 [INF] Executed DbCommand (154ms) [Parameters=[@__userName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT u."Id", u."Email", u."Name", u."Password", u."TwoFactorSecret", u."UserName"
+FROM prueba_konecta."Users" AS u
+WHERE u."UserName" = @__userName_0
+LIMIT 1
+2024-09-10 14:14:55.336 -05:00 [INF] Executing ObjectResult, writing value of type 'System.Boolean'.
+2024-09-10 14:14:55.336 -05:00 [INF] Executed action WebApi.Controllers.TwoFactorController.HaveTFA (WebApi) in 154.9913ms
+2024-09-10 14:14:55.336 -05:00 [INF] Executed endpoint 'WebApi.Controllers.TwoFactorController.HaveTFA (WebApi)'
+2024-09-10 14:14:55.336 -05:00 [INF] Request finished HTTP/2 GET https://localhost:44302/api/TwoFactor/HaveTFA?userName=juanda - 200 null application/json; charset=utf-8 155.8369ms
+2024-09-10 14:14:57.964 -05:00 [INF] Executed endpoint '/notificationHub'
+2024-09-10 14:14:57.965 -05:00 [INF] Request finished HTTP/1.1 GET https://localhost:44302/notificationHub?id=pplN6hpOFlm_d3UlLOg8oA - 101 null null 8922.8528ms
+2024-09-10 14:14:58.156 -05:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null null
+2024-09-10 14:14:58.156 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:58.156 -05:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 204 null null 0.3203ms
+2024-09-10 14:14:58.160 -05:00 [INF] Request starting HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - null 0
+2024-09-10 14:14:58.160 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:58.160 -05:00 [INF] Executing endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:58.161 -05:00 [INF] Executed endpoint '/notificationHub/negotiate'
+2024-09-10 14:14:58.161 -05:00 [INF] Request finished HTTP/2 POST https://localhost:44302/notificationHub/negotiate?negotiateVersion=1 - 200 316 application/json 0.4872ms
+2024-09-10 14:14:58.174 -05:00 [INF] Request starting HTTP/1.1 GET https://localhost:44302/notificationHub?id=sYBqU6I3snqCgXJAFrzWeA - null null
+2024-09-10 14:14:58.174 -05:00 [INF] CORS policy execution successful.
+2024-09-10 14:14:58.174 -05:00 [INF] Executing endpoint '/notificationHub'

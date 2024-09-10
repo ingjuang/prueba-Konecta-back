@@ -20,3 +20,15 @@ D:\proyectos\prueba_konecta_back\Core\obj\Debug\net8.0\Core.dll
 D:\proyectos\prueba_konecta_back\Core\obj\Debug\net8.0\refint\Core.dll
 D:\proyectos\prueba_konecta_back\Core\obj\Debug\net8.0\Core.pdb
 D:\proyectos\prueba_konecta_back\Core\obj\Debug\net8.0\ref\Core.dll
+D:\proyectos\prueba-Konecta-back\Core\bin\Debug\net8.0\Core.deps.json
+D:\proyectos\prueba-Konecta-back\Core\bin\Debug\net8.0\Core.dll
+D:\proyectos\prueba-Konecta-back\Core\bin\Debug\net8.0\Core.pdb
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.sourcelink.json
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.dll
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\refint\Core.dll
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\Core.pdb
+D:\proyectos\prueba-Konecta-back\Core\obj\Debug\net8.0\ref\Core.dll
